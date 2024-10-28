@@ -69,7 +69,7 @@ for (let i = 0; i < teamMembers.length; i++) {
     `;
 }
 
-formEmployeer..addEventListener('submit', function (event) {
+formEmployeer.addEventListener('submit', function (event) {
     event.preventDefault();
     console.log('click')
 
