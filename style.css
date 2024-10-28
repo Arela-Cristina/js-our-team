@@ -7,6 +7,14 @@
     font-family: "Playwrite GB S", cursive;
 }
 
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    max-width: 85rem;
+    margin: 0 auto;
+}
+
 .employeerCard {
     display: flex;
     background-color: #009688;
