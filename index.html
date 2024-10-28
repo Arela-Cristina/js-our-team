@@ -28,6 +28,32 @@
         <!-- </div> -->
     </div>
 
+    <!-- form section -->
+    <h2>Registra un nuovo Collaboratore</h2>
+    <form action="/submit" method="POST">
+        <!-- form nome -->
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <!-- form Rol -->
+        <label for="role">Position</label>
+        <input type="text" id="position" name="role" required>
+        <br><br>
+
+        <!-- form email -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <!-- Foto -->
+        <label for="photo">Foto:</label>
+        <input type="file" id="picture" name="photo" accept="image/*" required>
+
+        <!-- bottone -->
+        <button type="submit">Aggiunge</button>
+    </form>
+
     <script src="main.js"></script>
 </body>
 
