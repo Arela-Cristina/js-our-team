@@ -42,11 +42,28 @@ const teamMembers = [
 
 
 //container DOM
+const cardContainer = document.getElementById('cardContainer')
 const employeerCard = document.getElementById('employeerCard')
+
 //elementi DOM
-const employeerPicture = document.getElementById('employeerPicture')
-const employeerName = document.getElementById('employeerName')
-const employeerPosition = document.getElementById('employeerPosition')
-const employeerMail = document.getElementById('employeerMail')
+const employeerPicture = document.querySelector('.employeerPicture')
+const employeerName = document.querySelector('.employeerName')
+const employeerPosition = document.querySelector('.employeerPosition')
+const employeerMail = document.querySelector('.employeerMail')
 
+//ciclo ogni oggetto del array
+for (let i = 0; i < teamMembers.length; i++) {
+    let member = teamMembers[i];
+    console.log(member.name)
 
+    cardContainer.innerHTML += `
+    <div class="employeerCard">
+        <img class="employeerPicture" src="${member.img}" alt="employeer">
+        <div class="employeerinformation">
+            <div class="employeerName">${member.name}</div>
+            <div class="employeerPosition">${member.role}</div>
+            <div class="employeerMail">${member.email}</div>
+        </div>
+    </div>
+    `;
+}
