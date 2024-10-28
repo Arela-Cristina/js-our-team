@@ -16,11 +16,13 @@
 
 #cardContainer {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 5rem;
     max-width: 85rem;
     margin: 0 auto;
     margin-top: 5rem;
+
 }
 
 .employeerCard {
