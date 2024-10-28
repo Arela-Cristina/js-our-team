@@ -45,11 +45,9 @@ const teamMembers = [
 const cardContainer = document.getElementById('cardContainer')
 const employeerCard = document.getElementById('employeerCard')
 
-//elementi DOM
-const employeerPicture = document.querySelector('.employeerPicture')
-const employeerName = document.querySelector('.employeerName')
-const employeerPosition = document.querySelector('.employeerPosition')
-const employeerMail = document.querySelector('.employeerMail')
+//form DOM
+const formEmployeer = document.getElementById('formEmployeer')
+
 
 //ciclo ogni oggetto del array
 for (let i = 0; i < teamMembers.length; i++) {
@@ -59,11 +57,11 @@ for (let i = 0; i < teamMembers.length; i++) {
     //template literal per inject innerHTML in maniera dinamica
     cardContainer.innerHTML += `
     <div class="employeerCard">
-        <img class="employeerPicture" src="${member.img}" alt="employeer">
+        <img id="employeerPicture" src="${member.img}" alt="employeer">
         <div class="employeerinformation">
-            <div class="employeerName">${member.name}</div>
-            <div class="employeerPosition">${member.role}</div>
-            <div class="employeerMail">${member.email}</div>
+            <div id="employeerName">${member.name}</div>
+            <div id="employeerPosition">${member.role}</div>
+            <div id="employeerMail">${member.email}</div>
         </div>
     </div>
     `;
@@ -72,6 +70,21 @@ for (let i = 0; i < teamMembers.length; i++) {
 formEmployeer.addEventListener('submit', function (event) {
     event.preventDefault();
     console.log('click')
+
+    //elementi form DOM
+    const Picture = document.getElementById('Picture').value;
+    const Name = document.getElementById('Name').value;
+    const Position = document.getElementById('Position').value;
+    const Mail = document.getElementById('Mail').value;
+
+    teamMembers.push(
+        {
+            name: Name,
+            role: Position,
+            email: Mail,
+            img: Picture
+        }
+    )
 
 
 });
