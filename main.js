@@ -57,11 +57,11 @@ for (let i = 0; i < teamMembers.length; i++) {
     //template literal per inject innerHTML in maniera dinamica
     cardContainer.innerHTML += `
     <div class="employeerCard">
-        <img id="employeerPicture" src="${member.img}" alt="employeer">
+        <img src="${member.img}" alt="employeer">
         <div class="employeerinformation">
-            <div id="employeerName">${member.name}</div>
-            <div id="employeerPosition">${member.role}</div>
-            <div id="employeerMail">${member.email}</div>
+            <div>${member.name}</div>
+            <div>${member.role}</div>
+            <div>${member.email}</div>
         </div>
     </div>
     `;
@@ -72,19 +72,31 @@ formEmployeer.addEventListener('submit', function (event) {
     console.log('click')
 
     //elementi form DOM
-    const Picture = document.getElementById('Picture').value;
-    const Name = document.getElementById('Name').value;
-    const Position = document.getElementById('Position').value;
-    const Mail = document.getElementById('Mail').value;
+    const picture = document.getElementById('picture').value;
+    const name = document.getElementById('name').value;
+    const position = document.getElementById('position').value;
+    const mail = document.getElementById('mail').value;
 
+    //pushamo il oggetto
     teamMembers.push(
         {
-            name: Name,
-            role: Position,
-            email: Mail,
-            img: Picture
+            name: name,
+            role: position,
+            email: mail,
+            img: picture
         }
     )
 
+    //aggiungiamo dinamicamente gli elemeti che provengono del form
+    cardContainer.innerHTML += `
+    <div class="employeerCard">
+        <img src="${picture}" alt="employeer">
+        <div class="employeerinformation">
+            <div>${name}</div>
+            <div>${position}</div>
+            <div>${mail}</div>
+        </div>
+    </div>
+    `;
 
 });
