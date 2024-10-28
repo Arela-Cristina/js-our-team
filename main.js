@@ -56,6 +56,7 @@ for (let i = 0; i < teamMembers.length; i++) {
     let member = teamMembers[i];
     console.log(member.name)
 
+    //template literal per inject innerHTML in maniera dinamica
     cardContainer.innerHTML += `
     <div class="employeerCard">
         <img class="employeerPicture" src="${member.img}" alt="employeer">
