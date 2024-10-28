@@ -6,3 +6,21 @@
     box-sizing: border-box;
     font-family: "Playwrite GB S", cursive;
 }
+
+.employeerCard {
+    display: flex;
+    background-color: #009688;
+    width: 25rem;
+    gap: 1rem;
+}
+
+img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.employeerinformation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
