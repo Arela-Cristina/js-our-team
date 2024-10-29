@@ -14,6 +14,11 @@
     margin-top: 2rem;
 }
 
+h1 {
+    color: #E91E63;
+    font-weight: bolder;
+}
+
 #cardContainer {
     display: flex;
     justify-content: center;
