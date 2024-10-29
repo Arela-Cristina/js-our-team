@@ -59,9 +59,9 @@ for (let i = 0; i < teamMembers.length; i++) {
     <div class="employeerCard">
         <img src="${member.img}" alt="employeer">
         <div class="employeerinformation">
-            <div>${member.name}</div>
-            <div>${member.role}</div>
-            <div>${member.email}</div>
+            <div class="styleName">${member.name}</div>
+            <div class="styleRole">${member.role}</div>
+            <div class="styleMail">${member.email}</div>
         </div>
     </div>
     `;
@@ -76,6 +76,14 @@ formEmployeer.addEventListener('submit', function (event) {
     const name = document.getElementById('name').value;
     const position = document.getElementById('position').value;
     const mail = document.getElementById('mail').value;
+    //foto random
+    let imgSrc;
+
+    if (picture) {
+        imgSrc = picture;  // se essiste carica la foto
+    } else {
+        imgSrc = randomPicture(); // altrimenti carica una foto random
+    }
 
     //pushamo il oggetto
     teamMembers.push(
@@ -83,20 +91,25 @@ formEmployeer.addEventListener('submit', function (event) {
             name: name,
             role: position,
             email: mail,
-            img: picture
+            img: imgSrc
         }
     )
 
     //aggiungiamo dinamicamente gli elemeti che provengono del form
     cardContainer.innerHTML += `
     <div class="employeerCard">
-        <img src="${picture}" alt="employeer">
+        <img src="${imgSrc}" alt="employeer">
         <div class="employeerinformation">
-            <div>${name}</div>
-            <div>${position}</div>
-            <div>${mail}</div>
+            <div class="styleName">${name}</div>
+            <div class="styleRole">${position}</div>
+            <div class="styleMail">${mail}</div>
         </div>
     </div>
     `;
 
 });
+
+// foto random
+function randomPicture() {
+    return `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`;
+}
