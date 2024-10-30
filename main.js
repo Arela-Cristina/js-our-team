@@ -113,3 +113,6 @@ formEmployeer.addEventListener('submit', function (event) {
 function randomPicture() {
     return `https://picsum.photos/200/300?random=${Math.floor(Math.random() * 1000)}`;
 }
+
+//consigli
+// il codice dentro di InnerHTML, dovrebbe essere dentro una funzione.
